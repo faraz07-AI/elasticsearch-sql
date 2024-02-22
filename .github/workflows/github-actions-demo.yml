@@ -40,3 +40,6 @@ jobs:
           sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
           sudo service elasticsearch start
           sleep 30
+
+      - name: Checking Java version
+        run: java -version
