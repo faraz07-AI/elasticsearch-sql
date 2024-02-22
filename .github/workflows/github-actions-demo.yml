@@ -27,3 +27,6 @@ jobs:
           java-version: '17'
           architecture: 'x64'
           distribution: 'adopt'
+
+      - name: clearing Elasticsearch present data
+        run: sudo rm -rf /var/lib/elasticsearch
