@@ -46,3 +46,6 @@ jobs:
 
       - name: Build and installing with Maven
         run: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true
+
+      - name: ulimit information
+        run:  ulimit -a
