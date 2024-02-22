@@ -33,3 +33,5 @@ jobs:
 
       - name: Elasticsearch Instalation-1
         run: curl https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.11.3-amd64.deb -o elasticsearch.deb && sudo dpkg -i --force-confnew elasticsearch.deb
+      - name: Elasticsearch Instalation-2
+        run: sudo dpkg -i --force-confnew elasticsearch-8.11.3-amd64.deb
