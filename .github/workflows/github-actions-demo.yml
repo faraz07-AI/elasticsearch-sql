@@ -43,3 +43,6 @@ jobs:
 
       - name: Checking Java version
         run: java -version
+
+      - name: Build and installing with Maven
+        run: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true
