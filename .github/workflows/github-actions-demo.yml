@@ -52,4 +52,4 @@ jobs:
         run:  ulimit -a
 
       - name: Run Mvn test
-        run:  mvn test
+        run:  mvn -q test
