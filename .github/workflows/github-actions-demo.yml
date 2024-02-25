@@ -28,3 +28,4 @@ jobs:
             distribution: 'adopt'
 
         - run: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true
+        - run: sudo rm -rf /var/lib/elasticsearch
