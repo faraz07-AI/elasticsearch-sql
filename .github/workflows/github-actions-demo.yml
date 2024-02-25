@@ -32,3 +32,5 @@ jobs:
         - run: curl https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.11.3-amd64.deb -o elasticsearch.deb && sudo dpkg -i --force-confnew elasticsearch.deb
         - run: sudo cp ./src/test/resources/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
         - run: sudo cat /etc/elasticsearch/elasticsearch.yml
+        - run: sudo java -version
+        - run: sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
