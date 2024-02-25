@@ -1,0 +1,44 @@
+name: gha2-results
+
+on:
+  pull_request:
+    branches:
+      - branch-2
+  push:
+    branches:
+      - branch-2
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        jdk:
+          - name: Oracle JDK 11
+            version: '11'
+          - name: Oracle JDK EA
+            version: '16'
+          - name: OpenJDK 11
+            version: '11'
+          - name: OpenJDK EA
+            version: '16'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.5.0
+
+      - uses: actions/setup-java@v3.12.0
+        with:
+            java-version: ${{ matrix.jdk.version }}
+            distribution: 'zulu'
+      - run: mvn -q install -Dgpg.skip
+      - name: build with maven
+        run: mvn -q clean compile test
+
+      - name: Uploading code coverage data to the Codecov service
+        run: bash <(curl -s https://codecov.io/bash)
+
+      - name: Set up cache
+        uses: actions/cache@v3.3.1
+        with:
+            path: "${{ github.workspace }}/.m2"
+            key: "${{ runner.os }}-path"
