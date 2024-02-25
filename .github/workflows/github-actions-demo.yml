@@ -30,3 +30,4 @@ jobs:
         - run: sudo rm -rf /var/lib/elasticsearch
         - run: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true
         - run: curl https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.11.3-amd64.deb -o elasticsearch.deb && sudo dpkg -i --force-confnew elasticsearch.deb
+        - run: sudo cp ./src/test/resources/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
