@@ -26,5 +26,5 @@ jobs:
           with:
             java-version: ${{ matrix.java.version }}
             distribution: 'zulu'
-          run: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true
+        - run: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true
 
