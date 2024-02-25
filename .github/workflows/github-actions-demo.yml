@@ -34,3 +34,4 @@ jobs:
         - run: sudo cat /etc/elasticsearch/elasticsearch.yml
         - run: sudo java -version
         - run: sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
+        - run: sudo service elasticsearch start
