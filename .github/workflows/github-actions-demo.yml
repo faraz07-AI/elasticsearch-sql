@@ -39,3 +39,6 @@ jobs:
 
         - name: Run ulimit
           run: ulimit -a
+
+        - name: Run test
+          run: mvn test
