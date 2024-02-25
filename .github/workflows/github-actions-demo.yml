@@ -35,3 +35,7 @@ jobs:
         - run: sudo java -version
         - run: sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
         - run: sudo service elasticsearch start
+        - run: sleep 30
+
+        - name: Run ulimit
+          run: ulimit -a
