@@ -1,8 +1,9 @@
-name: placeholder_Name
+name: gha-result
 
 on:
   pull_request:
-    branches: branch-name
+    branches:
+      - branch-1
   push:
     branches:
       - branch-1
