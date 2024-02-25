@@ -10,9 +10,6 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix: java
-    - name: Placeholder
       runs-on: ubuntu-latest
       steps:
         with: key
